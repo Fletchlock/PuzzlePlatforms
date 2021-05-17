@@ -27,5 +27,8 @@ private:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Movement", meta = (AllowPrivateAccess = "true", MakeEditWidget = "true"))
 	FVector TargetLocation;
 
+	FVector GlobalTargetLocation;
+	FVector GlobalStartLocation;
+
 	
 };
