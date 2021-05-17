@@ -24,5 +24,8 @@ public:
 private:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Movement", meta = (AllowPrivateAccess = "true"))
 	float PlatformSpeed = 20;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Movement", meta = (AllowPrivateAccess = "true", MakeEditWidget = "true"))
+	FVector TargetLocation;
+
 	
 };
