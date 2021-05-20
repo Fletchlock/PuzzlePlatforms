@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "PlatformTrigger.generated.h"
+// #include "Components/StaticMeshComponent.h"
 
 UCLASS()
 class PUZZLEPLATFORMS_API APlatformTrigger : public AActor
@@ -24,7 +25,11 @@ public:
 	virtual void Tick(float DeltaTime) override;
 
 private:
-	UPROPERTY(VisibleAnywhere, meta = (AllowPrivateAccess = "true"))
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, category = "Components", meta = (AllowPrivateAccess = "true"))
+	USceneComponent* TriggerPadRoot;
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, category = "Components", meta = (AllowPrivateAccess = "true"))
 	class UBoxComponent* TriggerVolume;
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, category = "Components", meta = (AllowPrivateAccess = "true"))
+	UStaticMeshComponent* TriggerPad;
 
 };
