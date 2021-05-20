@@ -4,8 +4,9 @@
 
 #include "CoreMinimal.h"
 #include "Engine/StaticMeshActor.h"
-#include "MovingPlatform.generated.h"
+#include "GameplayTagContainer.h"
 
+#include "MovingPlatform.generated.h"
 /**
  * 
  */
@@ -21,6 +22,10 @@ public:
 
 	virtual void Tick(float DeltaTime) override;
 
+	void AddActiveTrigger();
+
+	void RemoveActiveTrigger();
+
 private:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Movement", meta = (AllowPrivateAccess = "true"))
 	float PlatformSpeed = 20;
@@ -30,5 +35,7 @@ private:
 	FVector GlobalTargetLocation;
 	FVector GlobalStartLocation;
 
-	
+	UPROPERTY(EditAnywhere)
+	int ActiveTriggers = 1;
+
 };
